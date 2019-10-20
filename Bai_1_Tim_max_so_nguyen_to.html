@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+    Click here to find max Prime!
+    <button type="button" onclick="clickme()">Find Prime Max Number</button>
+<body>
+  <script>
+      let a = [2,3,4,5,6,7,8,9,53];
+      let b = [];
+      // Tim so nguyen to
+      function findPrime(N) {
+          if (N < 2) {
+              return false;
+          } else if ( N >= 2 ) {
+              for (let i = 2; i < N; i++) {
+                  if (N % i == 0) {
+                      return false;
+                  }
+              }
+              return true;
+          }
+      }
+
+    function clickme() {
+        for (let j = 0; j < a.length; j++) {
+            if (findPrime(a[j])) {
+                b.push(a[j]);
+            }
+        }
+
+        let max = b[0];
+        for (let k = 0; k < b.length; k++) {
+            if (b[k] < max) {
+                max = b[k]
+            }
+        }
+        document.write('Max Prime Number in Array is: ' + max+'<br/>');
+        document.write('Array is: '+b);
+    };
+  </script>
+
+</body>
+</html>
